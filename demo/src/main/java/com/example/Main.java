@@ -70,14 +70,18 @@ public class Main {
         Scanner teclado2 = new Scanner(System.in);
         System.out.println("Ingrese el monto a depositar:");
         double deposito = teclado2.nextDouble();
+        if (deposito < 0) {System.out.println("DEPOSITO INVALIDO");
+            
+        }else{
         saldosCuentas[indiceCuenta] += deposito;
         System.out.println("Deposito realizado con éxito. "+nombresCuentas[indiceCuenta]+ " Su Nuevo saldo es : " + saldosCuentas[indiceCuenta]);
-        }
+        }}
 
     public static void retirar(int indiceCuenta, double[] saldosCuentas, String[] nombresCuentas, double cantidadRetiro){
-    if(saldosCuentas[indiceCuenta]<cantidadRetiro){
-        System.out.println("FONDOS INSUFICIENTES");
-    }else{
+    
+        if(saldosCuentas[indiceCuenta]<cantidadRetiro || cantidadRetiro<0){
+        System.out.println("FONDOS INSUFICIENTES");}
+        else{
         saldosCuentas[indiceCuenta] -= cantidadRetiro;
         System.out.println("Retiro realizado con éxito. "+nombresCuentas[indiceCuenta]+ " Su Nuevo saldo es : " + saldosCuentas[indiceCuenta]);
     }
