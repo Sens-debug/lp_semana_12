@@ -62,7 +62,7 @@ public class Main {
         for(int i=0; i<nombresCuentas.length; i++) {
         System.out.println("INDICE -->"+i+ " "+nombresCuentas[i] + " ");
         }seleccion=teclado.nextInt();
-        if (seleccion >= nombresCuentas.length) {System.out.println("INDICE INVALIDO");
+        if (seleccion >= nombresCuentas.length || seleccion<0) {System.out.println("INDICE INVALIDO");
         seleccion=-1;}
         return seleccion;}
 
